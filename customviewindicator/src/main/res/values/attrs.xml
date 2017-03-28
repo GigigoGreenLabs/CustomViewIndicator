@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="CustomIndicator">
+    <attr format="integer" name="orientation">
+      <enum name="horizontal" value="0"/>
+      <enum name="vertical" value="1"/>
+    </attr>
+    <attr format="integer" name="selectedImage"/>
+    <attr format="reference" name="unselectedImage"/>
+    <attr format="integer" name="size"/>
+  </declare-styleable>
+</resources>
