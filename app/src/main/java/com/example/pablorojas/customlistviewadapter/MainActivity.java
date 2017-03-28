@@ -24,11 +24,11 @@ public class MainActivity extends AppCompatActivity {
   private void settings() {
     customView.setOrientation(horizontal);
     customView.setImageResource(R.mipmap.ic_launcher, R.mipmap.ic_launcher_round);
-    customView.addNewImage(7);
-    customView.setImageSize(100,100);
+    customView.setNumberOfImages(4);
+    customView.setImageSize(150,150);
     customView.setPosition(50,50,0,0);
-    customView.deleteImages(2);
-    customView.setSelectedImage(5);
+    customView.deleteImages(4);
+    customView.setSelectedImage(3);
     int lastImage = customView.getSelectedImage();
     Toast.makeText(this, "Ultima imagen seleccionada "+ lastImage, Toast.LENGTH_SHORT).show();
     //customView.setGravity(gravity);

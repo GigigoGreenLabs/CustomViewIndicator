@@ -21,25 +21,25 @@ public class CustomIndicator extends LinearLayout {
 
   public CustomIndicator(Context context) {
     super(context);
-    inicializar();
+    init();
   }
 
   public CustomIndicator(Context context, @Nullable AttributeSet attrs) {
     super(context, attrs);
-    inicializar();
+    init();
   }
 
   public CustomIndicator(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
-    inicializar();
+    init();
   }
 
   public CustomIndicator(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
     super(context, attrs, defStyleAttr, defStyleRes);
-    inicializar();
+    init();
   }
 
-  private void inicializar() {
+  private void init() {
     String infService = Context.LAYOUT_INFLATER_SERVICE;
     LayoutInflater li = (LayoutInflater) getContext().getSystemService(infService);
     li.inflate(R.layout.custom_view, this, true);
@@ -54,17 +54,17 @@ public class CustomIndicator extends LinearLayout {
     contentView.setOrientation(orientation);
   }
 
-  public void addNewImage(int numberImages) {
+  public void setNumberOfImages(int numberImages) {
     for (int i = 0; i < numberImages; i++) {
-      ImageView imagen = new ImageView(getContext());
-      arrayImages.add(imagen);
+      ImageView image = new ImageView(getContext());
+      arrayImages.add(image);
 
       if (i == lastImageSelected){
-        imagen.setBackgroundResource(selectedImageResource);
+        image.setBackgroundResource(selectedImageResource);
       }else{
-        imagen.setBackgroundResource(notSelectedImageResource);
+        image.setBackgroundResource(notSelectedImageResource);
       }
-      contentView.addView(imagen);
+      contentView.addView(image);
     }
   }
 
@@ -83,14 +83,9 @@ public class CustomIndicator extends LinearLayout {
     contentView.setLayoutParams(params);
   }
 
-  public void setGravity(int gravity){
-    LayoutParams params = (LayoutParams) contentView.getLayoutParams();
-    params.bottomMargin = gravity;
-    contentView.setLayoutParams(params);
-  }
 
-  public void deleteImages(int numimages) {
-    for (int i = 0; i < numimages; i++) {
+  public void deleteImages(int numberImages) {
+    for (int i = 0; i < numberImages; i++) {
       arrayImages.remove(arrayImages.size()-1);
       resetLayout();
     }

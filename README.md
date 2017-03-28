@@ -7,7 +7,7 @@
  ```
     CustomIndicator customView = (CustomIndicator) findViewById(R.id.customview);
     customView.setImageResource(R.mipmap.ic_launcher, R.mipmap.ic_launcher_round);
-    customView.addNewImage(int numberOfImages);
+    customView.setNumberOfImages(int numberOfImages);
 ```
 
 sets the selected and the unselected image to the view, adds to arrayImages new ImageView and loads into view
@@ -48,7 +48,7 @@ Returns the selected Image
  
 
  
- You can use this library importing the glide or picasso dependency in your build.gradle file
+ You can use this library importing the dependency in your build.gradle file
 
 ```
 Add it in your root build.gradle at the end of repositories:
@@ -66,8 +66,7 @@ Add the dependency
 	        compile 'com.github.GigigoGreenLabs:CustomViewIndicator:1.0'
 	}
 ```
- 
-### TODO
+
 
 
 License
