@@ -5,7 +5,7 @@
       <enum name="horizontal" value="0"/>
       <enum name="vertical" value="1"/>
     </attr>
-    <attr format="integer" name="selectedImage"/>
+    <attr format="reference" name="selectedImage"/>
     <attr format="reference" name="unselectedImage"/>
     <attr format="integer" name="size"/>
   </declare-styleable>

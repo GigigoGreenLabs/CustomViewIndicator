@@ -5,15 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.pablorojas.customlistviewadapter.MainActivity"
-    >
+    tools:context="com.example.pablorojas.customlistviewadapter.MainActivity">
 
   <com.example.customviewindicator.CustomIndicator
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:id="@+id/customview"
-      app:size="100"
-      app:orientation="0">
+      app:size="50"
+      app:orientation="0"
+      app:selectedImage="@drawable/selectedpin"
+      app:unselectedImage="@drawable/unselectedpin">
   </com.example.customviewindicator.CustomIndicator>
 
 </android.support.constraint.ConstraintLayout>

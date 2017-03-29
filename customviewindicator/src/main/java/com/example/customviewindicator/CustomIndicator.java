@@ -21,7 +21,8 @@ public class CustomIndicator extends LinearLayout {
   private int lastImageSelected;
   private int selectedImageResource;
   private int unselectedImageResource;
-  private int size;
+  private int height;
+  private int width;
   private int orientation;
 
   public CustomIndicator(Context context) {
@@ -47,7 +48,8 @@ public class CustomIndicator extends LinearLayout {
     lastImageSelected = 0;
     selectedImageResource = 0;
     unselectedImageResource = 0;
-    size = 0;
+    height = 0;
+    width = 0;
     orientation = 0;
     contentView = (LinearLayout) findViewById(R.id.linearCustom);
     loadAttributes(attrs, defStyle);
@@ -56,20 +58,20 @@ public class CustomIndicator extends LinearLayout {
   private void loadAttributes(AttributeSet attrs, int defStyle) {
     final TypedArray a =
         getContext().obtainStyledAttributes(attrs, R.styleable.CustomIndicator, defStyle, 0);
-    size = a.getInteger(R.styleable.CustomIndicator_size, 100);
-    orientation = a.getInteger(R.styleable.CustomIndicator_orientation, 0);
-    Log.v("------",""+ size);
-    setAtributes(size, orientation);
-    a.recycle();
-  }
-
-  private void setAtributes(int size, int orientation) {
-    setImageSize(size, size);
+    int size = a.getInteger(R.styleable.CustomIndicator_size, 100);
+    height = size;
+    width = size;
+    orientation = a.getInteger(R.styleable.CustomIndicator_orientation, LinearLayout.HORIZONTAL);
+    selectedImageResource =
+        a.getResourceId(R.styleable.CustomIndicator_selectedImage, R.drawable.selectedpin);
+    unselectedImageResource =
+        a.getResourceId(R.styleable.CustomIndicator_unselectedImage, R.drawable.unselectedpin);
     if (orientation == 1) {
       setOrientation(LinearLayout.VERTICAL);
     } else {
 
     }
+    a.recycle();
   }
 
   public void setOrientation(int orientation) {
@@ -91,6 +93,11 @@ public class CustomIndicator extends LinearLayout {
         }
         contentView.addView(image);
       }
+    }
+    if (width != 0 && height != 0) {
+      setImageSize(width, height);
+    } else {
+      setImageSize(100, 100);
     }
   }
 
