@@ -82,7 +82,7 @@ allprojects {
 Add the dependency
  
   dependencies {
-	        compile 'com.github.GigigoGreenLabs:CustomViewIndicator:1.0'
+	        compile 'com.github.GigigoGreenLabs:CustomViewIndicator:1.1'
 	}
 ```
 
