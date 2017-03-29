@@ -6,45 +6,64 @@
 
  ```
     CustomIndicator customView = (CustomIndicator) findViewById(R.id.customview);
-    customView.setImageResource(R.mipmap.ic_launcher, R.mipmap.ic_launcher_round);
-    customView.setNumberOfImages(int numberOfImages);
+
+    customView.initWithImages(int numberImages);
+
 ```
 
-sets the selected and the unselected image to the view, adds to arrayImages new ImageView and loads into view
+
+You can set the attributes in you xml file:
+
+```
+ <com.example.customviewindicator.CustomIndicator
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/customview"
+      app:size="50"
+      app:orientation="0"
+      app:selectedImage="@drawable/selectedpin"
+      app:unselectedImage="@drawable/unselectedpin">
+  </com.example.customviewindicator.CustomIndicator>
+
+```
+
+
+Or in your java file:
 
 ```
     customView.setOrientation(LinearLayout.HORIZONTAL);
 ```
 
-sets the orientation
+Sets the orientation.
 
 ``` 
     customView.setImageSize(int height, int width);
 ``` 
 
-sets image size
+Sets image size.
 
 ``` 
     customView.setPosition(int marginLeft,int marginTop,int marginRight,int marginBottom); 
 ``` 
 
-sets the margin of de custom view
+Sets the margin of de custom view.
 
 ```
     customView.deleteImages(int number);
 ``` 
 
-deletes last images of arrayImages
+Delete last number of images of the ImageView array.
 
 ``` 
     customView.setSelectedImage(int position);
 ``` 
-sets the selected Image
+
+Sets the selected Image.
 
 ``` 
     customView.getSelectedImage();
 ``` 
-Returns the selected Image
+Returns the selected Image.
  
 
  
